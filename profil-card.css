@@ -1,0 +1,167 @@
+
+:root {
+    /* Text Colors */
+    --color-text-primary: oklch(54.653% 0.24562 262.882);
+    --color-text-main: oklch(0% 0 0);
+    --color-text-muted: oklch(55.754% 0.01655 244.997);
+    --color-text-light: #fff;
+
+    /* Backgrounds */
+    --color-bg-primary : oklch(54.653% 0.24562 262.882);
+    --color-bg-main: oklch(100% 0.00011 271.152);
+    --color-bg-surface : oklch(98.826% 0.00696 248.26);
+
+    /* Accents*/
+    --color-accent-success : oklch(91.305% 0.23342 130.035);
+
+    /* Utilties Variable*/
+    --hover-overlay: oklch(0% 0 0);
+    --hover-amount: 8%;
+}
+
+/* ====== Mode sombre ======= */ 
+
+
+@media (prefers-color-scheme: darke) {
+ :root {
+
+ 
+    /* Text Colors */
+    --color-text-primary: oklch(44.653% 0.24562 262.882);
+    --color-text-main: oklch(93% 0.025 0);
+    /* --color-text-muted: oklch(57.302% 0.0001 271.152); */
+    --color-text-muted: oklch(52.754% 0.02655 244.997);
+    --color-text-light: #fff;
+
+    /* Backgrounds */
+    --color-bg-primary : oklch(44.653% 0.24562 262.882);
+    --color-bg-main: oklch(10% 0.00011 271.152);
+    --color-bg-surface : oklch(13.826% 0.00696 248.26);
+
+    /* Accents*/
+    --color-accent-success : oklch(65.305% 0.23342 130.035);
+
+    /* Utilties Variable*/
+    --hover-overlay: oklch(92% 0.025 0);
+    --hover-amount: 12%;
+}
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--color-bg-main);
+}
+main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    background-color: var(--color-bg-main);
+}
+
+
+.profil-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px 5px #00000011;
+    background-color: var(--color-bg-main);
+    
+}
+
+.profil-card-header-image-block {
+    position: relative;
+    width: 150px;
+    margin-inline: auto;
+    
+}
+
+.profil-card-header-img {
+    display: block;
+    width: 150px;
+    padding: 3px;
+    height: 150px;
+    border-radius: 9999px;
+    border: 4px solid var(--color-text-primary);  
+    margin-inline: auto;
+
+}
+
+.profil-card-header-status {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background-color: var(--color-accent-success);
+    right: 0%;
+    bottom: 15%;
+    transform: translateX(35%);
+}
+
+
+.profil-card-header-text-block {
+    text-align: center;
+}
+.profil-card-header-title {
+    font-size: 18px;
+    color: var(--color-text-main) ;
+    text-align: center;
+}
+.profil-card-header-subtitle {
+    font-size: 16px;
+    color: var(--color-text-primary) ;
+}
+
+.profil-card-body{
+}
+.profil-card-body-description {
+    font-size: 16px;
+    color: var(--color-text-muted);
+
+    &::first-letter{
+        -webkit-initial-letter: 3;
+        -moz-initial-letter: 3;
+        initial-letter:3;
+    }
+}
+
+
+
+.profil-card-footer-skills-list{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10px;
+    flex-wrap: wrap;
+}
+.profil-card-footer-skills-item {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    background-color: var(--color-bg-surface);
+    border-radius: 5px;
+    padding: 4px;
+    list-style-type: none;
+    margin: 0;
+}
+.profil-card-footer-btn {
+    font-size: 16px;
+    text-transform:capitalize;
+    color: var(--color-text-light);
+    background-color: var(--color-bg-primary);
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    &:hover {
+        background-color: color-mix(in oklch, var(--color-bg-primary), var(--hover-overlay) var(--hover-amount));
+    }
+}
